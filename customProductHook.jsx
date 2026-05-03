@@ -1,12 +1,20 @@
 
+const formatter = new Intl.NumberFormat('en-US',{
+    style:'currency',
+    currency:"ksh",
+})
+
+
+
+
 function CustomProductHook({product}) {
   return (
     <div>
-      <img src={product.image} alt={product.name} className="h-70 w-70 object-cover hover:scale-105" />
+      <img src={product.image} alt={product.name} className="h-70 w-85 lg:w-70 object-cover hover:scale-105" />
       <h2 className="text-black font-serif">{product.name}
         <span className="font-thin text-gray-600 "> {product.size}</span>
         </h2>   
-      <p className="font-bold font-serif text-xl ">KES {product.price}</p>
+      <p className="font-bold font-serif text-xl "> {formatter.format(product.price)}</p>
     </div>
   )
 }
