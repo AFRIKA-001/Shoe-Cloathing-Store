@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: "ksh",
+    currency: "kes",
 })
 
 
