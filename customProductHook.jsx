@@ -11,10 +11,10 @@ function CustomProductHook({ product }) {
         <div>
             <Link to={`/:id${product.id}`}>
                 <img src={product.image} alt={product.name} className="h-70 w-85 lg:w-70 object-cover hover:scale-105" />
-                <h2 className="text-black font-serif">{product.name}
-                    <span className="font-thin text-gray-600 pt-10"> size: {product.size}</span>
+                <h2 className="text-black font-medium mt-4 ">{product.name}
+                    <span className="font-normal  text-gray-500 "> size: {product.size}</span>
                 </h2>
-                <p className="font-bold tracking-tighter font-serif text-lg "> {formatter.format(product.price)}</p>
+                <p className=" tracking-tighter font-mono lg:text-lg "> {formatter.format(product.price)}</p>
             </Link>
 
         </div>

@@ -2,6 +2,7 @@
 import { supabase } from "../../store/supabaseClient"
 import CustomProductHook from '../../customProductHook'
 import  {useState , useEffect}  from "react"
+import { Loader2 } from "lucide-react";
 
 
 
@@ -26,12 +27,12 @@ function Women() {
 },[])
 
 if(isLoading){
-  return <div>loading...</div>
+  return <div className="text-red-600 flex justify-center  my-60 animate-spin"><Loader2/></div>
 }
 
   return (
   <>
-  <ul className="grid grid-cols-4 mt-4">
+  <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4">
     {shoes.map(product=><li key={product.id}>    
     <CustomProductHook product={product}/>
     
