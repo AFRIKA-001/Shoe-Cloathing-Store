@@ -2,6 +2,8 @@ import { Loader2 } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { supabase } from "../../store/supabaseClient"
+
+
 function DetailsPage() {
   const {category,productid}=useParams()
   const navigate = useNavigate()
@@ -69,6 +71,7 @@ if(!product){
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2">
               {product.name}
             </h1>
+            <p className="text-lg font-mono  pt-4 font-light"> size {product.size}</p>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -107,6 +110,7 @@ if(!product){
           </div>
         </div>
       </div>
+      
     </div>
   );
 }
