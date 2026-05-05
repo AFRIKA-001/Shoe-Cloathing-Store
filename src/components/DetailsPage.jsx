@@ -85,12 +85,12 @@ if(!product){
           </p>
 
           <div className="pt-4 space-y-4">
-            <button className="w-full bg-black text-white py-4 rounded-full font-bold uppercase tracking-wider hover:bg-gray-800 transition-all active:scale-95 shadow-lg">
+            <button className="w-full bg-black cursor-pointer text-white py-4 rounded-full font-bold uppercase tracking-wider hover:bg-gray-800 transition-all active:scale-95 shadow-lg">
               Add to Cart
             </button>
-            {/* <button className="w-full border border-gray-300 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-gray-50 transition-all">
-              Save to Wishlist
-            </button> */}
+            <button className="w-full border cursor-pointer border-gray-300 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-gray-100 active:scale-95 transition-all">
+              Proceed to Checkout
+            </button>
           </div>
 
           {/* Trust Badges */}
