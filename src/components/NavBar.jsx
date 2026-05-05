@@ -2,7 +2,7 @@ import { Search,ShoppingBag ,X ,Menu} from "lucide-react"
 import { useState } from "react"
 import  { Link }  from "react-router-dom"
 import SideBar from "./SideBar";
-import JahaFavicon from "../../public/jahaIcon.jsx";
+import JahaIntegratedShield from "../../public/jahaIcon.jsx";
 
 function NavBar() { 
   const [isOpen , setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ function NavBar() {
     <>
       <nav className="bg-black sticky z-50 top-0 border-b border-b-white/40 flex items-center justify-between p-4 lg:p-8 text-white w-full">
         <h1 className="text-white font-bold text-xl">
-          <Link to='/' className="flex items-center"><JahaFavicon/>JAHA</Link>
+          <Link to='/' className="flex items-center"><JahaIntegratedShield/></Link>
         </h1>
 
         {/* Desktop Search */}
