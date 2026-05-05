@@ -6,10 +6,10 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 
 
-function CustomProductHook({ product }) {
+function CustomProductHook({ product,tableName }) {
     return (
         <div>
-            <Link to={`/:id${product.id}`}>
+            <Link to={`/products/${tableName}/${product.id}`}>
                 <img src={product.image} alt={product.name} className="h-48 w-full lg:h-70 object-cover hover:scale-105 hover:shadow-xl transition-shadow duration-300 aspect-video" />
                 <h2 className="text-gray-800 line-clamp-2 font-sans mt-4 ">{product.name}
                     <span className="font-sans font-light  text-gray-600 "> size: {product.size}</span>
