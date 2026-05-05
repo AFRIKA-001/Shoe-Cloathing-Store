@@ -3,6 +3,7 @@ import { useState } from "react"
 import  { Link }  from "react-router-dom"
 import SideBar from "./SideBar";
 import JahaIntegratedShield from "../../public/jahaIcon.jsx";
+import { motion } from "framer-motion";
 
 function NavBar() { 
   const [isOpen , setIsOpen] = useState(false);
@@ -11,7 +12,7 @@ function NavBar() {
 
   return (
     <>
-      <nav className="bg-black sticky z-50 top-0 border-b border-b-white/40 flex items-center justify-between p-4 lg:p-8 text-white w-full">
+      <motion.nav  initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:0.8,ease:"anticipate" }} className="bg-black sticky z-50 top-0 border-b border-b-white/40 flex items-center justify-between p-4 lg:p-8 text-white w-full">
         <h1 className="text-white font-bold text-xl">
           <Link to='/' className="flex items-center"><JahaIntegratedShield/></Link>
         </h1>
@@ -41,7 +42,7 @@ function NavBar() {
         >
           {isOpen ? <X className="text-red-600"/> : <Menu/>}
         </button>
-      </nav>
+      </motion.nav>
 
       {/* Sidebar Overlay/Component */}
       <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
