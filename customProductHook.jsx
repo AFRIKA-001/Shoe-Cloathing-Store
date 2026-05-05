@@ -14,7 +14,7 @@ function CustomProductHook({ product }) {
                 <h2 className="text-black font-medium mt-4 ">{product.name}
                     <span className="font-normal  text-gray-500 "> size: {product.size}</span>
                 </h2>
-                <p className=" tracking-tighter font-mono lg:text-lg "> {formatter.format(product.price)}</p>
+                <p className=" tracking-tighter font-mono font-bold lg:text-lg "> {formatter.format(product.price)}</p>
             </Link>
 
         </div>
