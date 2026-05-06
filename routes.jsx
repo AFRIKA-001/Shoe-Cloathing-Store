@@ -7,6 +7,8 @@ import Kids from "./src/components/Kids.jsx";
 import New from "./src/components/New.jsx";
 import DetailsPage from "./src/components/DetailsPage.jsx";
 import Cart from "./src/components/Cart.jsx";
+import SignIn from "./src/components/Logins/SignIn.jsx";
+import SignUp from "./src/components/Logins/SignUp.jsx";
 
 
 const router = createBrowserRouter([
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
         {path:'/women',element:<Women/>},
         {path:'/kids',element:<Kids/>},
         {path:'/newarrivals',element:<New/>},
+        {path:'/signin',element:<SignIn/>},
+        {path:'/signup',element:<SignUp/>},
     
         {path:'/products/:category/:productid',element:<DetailsPage/>}
 
