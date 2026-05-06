@@ -41,7 +41,7 @@ function NavBar() {
             <Link to='/cart' >
             <ShoppingBag className="text" />
             { totalCartItems > 0 &&
-            <span className="top-7 right-5 h-4 w-4 bg-red-400 flex items-center justify-center rounded-full text-xs absolute animate-bounce"> {totalCartItems}</span>
+            <span className="top-7 right-5 h-4 w-4 bg-red-600 flex items-center justify-center rounded-full text-xs absolute animate-bounce"> {totalCartItems}</span>
             }
             </Link>
         </ul>
