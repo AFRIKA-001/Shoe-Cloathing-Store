@@ -1,10 +1,19 @@
 
 import { Home,  LogOut } from "lucide-react"; 
+import { useContext } from "react";
 import { FaMale,FaFemale,FaChild,FaShoppingCart} from "react-icons/fa"
 import { HiSparkles } from "react-icons/hi"
 import { Link } from "react-router-dom";
+import {  motion } from "framer-motion";
+import CartContext from "../../store/cartContext";
 
 function SideBar({ isOpen, setIsOpen }) {
+  const cartContext = useContext(CartContext)
+  const totalCartItems = cartContext.items.reduce((totalItems,items)=>{
+    return totalItems + items.quantity;
+  },0)
+ 
+
   return (
     <>
       {/* 1. Dark Overlay (Background dim) */}
@@ -17,7 +26,20 @@ function SideBar({ isOpen, setIsOpen }) {
       <aside className={`fixed top-0 left-0 h-full w-64 bg-black text-white z-50 transform transition-transform duration-300 ease-in-out p-6 border-r border-white/20 
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         
-        <h2 className="text-lg font-semibold mb-8 border-b border-white/20 pb-2">Hello Jaha User 👋</h2>
+        <h2 className="text-lg font-semibold mb-8 border-b border-white/20 pb-2">Hello Jaha User <motion.span
+        style={{
+          display:"inline-block",
+          transformOrigin:"bottom center"
+        }}
+        animate={{
+          rotate:[0,20,-20,20,0]
+        }}
+        transition={{
+          duration:2,
+          repeat:Infinity,
+          ease:'easeInOut'
+        }}
+        >👋</motion.span></h2>
 
         <ul className="flex flex-col gap-6">
           <li onClick={() => setIsOpen(false)}>
@@ -41,7 +63,10 @@ function SideBar({ isOpen, setIsOpen }) {
           </li>
 
           <li>
-            <Link to='/cart' className="flex items-center gap-3"><FaShoppingCart></FaShoppingCart> Cart</Link>
+            <Link to='/cart' className="flex items-center gap-3"><FaShoppingCart></FaShoppingCart>
+             {totalCartItems > 0 &&
+              <span className="absolute top-80 right-50 h-5 w-5 rounded-full bg-red-600 flex items-center justify-center animate-bounce">{totalCartItems}</span>}
+              </Link>
           </li>
 
 
