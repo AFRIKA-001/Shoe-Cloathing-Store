@@ -17,9 +17,8 @@ function DetailsPage() {
     currency: "kes",
 })
 
-// const handleAddItemToCart = ({items})=>{
-//   cartContext.AddItems(items);
-// }
+
+
 
   useEffect(()=>{
 const dataFetching = async () => {
