@@ -11,7 +11,6 @@ function DetailsPage() {
   const[product,setProduct] = useState()
   const[isLoading,setIsLoading]=useState(false)
   const {AddItems} = useContext(CartContext)
-
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: "kes",
@@ -27,6 +26,7 @@ const dataFetching = async () => {
     const {data,error } = await supabase.from(category).select('*').eq('id',productid).single()
     if(error) throw error;
    setProduct(data)
+   
   }
 
   catch(err){console.error("error fetching data from :",category ,err)
@@ -57,7 +57,7 @@ if(!product){
         Back to Collection
       </button>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+      <div className="grid grid-cols-1 md:grid-cols-2  gap-12 lg:gap-24">
         {/* Left: Product Image */}
         <div className="overflow-hidden rounded-xl bg-gray-50">
           <img 

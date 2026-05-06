@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 function Footer() {
   return (
-    <div className="bg-black h-70 lg:h-screen text-white absolute w-full ">
+    <div className="bg-black h-70 lg:h-80 text-white absolute w-full ">
       <ul className="grid grid-cols-4 lg:grid-cols-4 justify-items-center py-8 space-y-6  ">
         <li><Link to ='/men' className="hover:text-red-500">Men</Link> </li>
         <li> <Link to ='/women'  className="hover:text-red-500">Women</Link></li>

@@ -1,5 +1,5 @@
 
-import { Home,  LogOut } from "lucide-react"; 
+import { Home,  LogOut, User2 } from "lucide-react"; 
 import { useContext } from "react";
 import { FaMale,FaFemale,FaChild,FaShoppingCart} from "react-icons/fa"
 import { HiSparkles } from "react-icons/hi"
@@ -26,7 +26,7 @@ function SideBar({ isOpen, setIsOpen }) {
       <aside className={`fixed top-0 left-0 h-full w-64 bg-black text-white z-50 transform transition-transform duration-300 ease-in-out p-6 border-r border-white/20 
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         
-        <h2 className="text-lg font-semibold mb-8 border-b border-white/20 pb-2">Hello Jaha User <motion.span
+        <h2 className="text-lg font-semibold mb-8 border-b border-white/20 pb-2 flex items-center gap-2"><span><User2/></span>Hello Jaha User <motion.span
         style={{
           display:"inline-block",
           transformOrigin:"bottom center"
