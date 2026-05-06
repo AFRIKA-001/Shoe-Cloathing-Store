@@ -6,6 +6,7 @@ import Women from "./src/components/Women.jsx";
 import Kids from "./src/components/Kids.jsx";
 import New from "./src/components/New.jsx";
 import DetailsPage from "./src/components/DetailsPage.jsx";
+import Cart from "./src/components/cart.jsx";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
         {path:'/women',element:<Women/>},
         {path:'/kids',element:<Kids/>},
         {path:'/newarrivals',element:<New/>},
+        {path:'/cart', element:<Cart/>},
         {path:'/products/:category/:productid',element:<DetailsPage/>}
 
         ]

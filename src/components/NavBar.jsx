@@ -1,14 +1,21 @@
 import { Search,ShoppingBag ,X ,Menu} from "lucide-react"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import  { Link }  from "react-router-dom"
 import SideBar from "./SideBar";
 import JahaIntegratedShield from "../../public/jahaIcon.jsx";
 import { motion } from "framer-motion";
+import CartContext from "../../store/cartContext.jsx";
 
 function NavBar() { 
   const [isOpen , setIsOpen] = useState(false);
   const handleToggle = () => {setIsOpen(!isOpen)}
   const listStyles = 'hover:underline active:scale-105'
+
+  const cartContext = useContext(CartContext)
+
+ const totalCartItems = cartContext.items.reduce((totalNumberOfItems,item)=>{
+  return totalNumberOfItems + item.quantity ;
+ },0)
 
   return (
     <>
@@ -31,7 +38,12 @@ function NavBar() {
             <li className={listStyles}><Link to='/women'>Women</Link></li>
             <li className={listStyles}><Link to='/kids'>Kids</Link></li>
             <li className={listStyles}><Link to='/newarrivals'>New</Link></li>
-            <li><Link to='/cart'><ShoppingBag/></Link></li>
+            <Link to='/cart' >
+            <ShoppingBag className="text" />
+            { totalCartItems > 0 &&
+            <span className="top-7 right-5 h-4 w-4 bg-red-400 flex items-center justify-center rounded-full text-xs absolute animate-bounce"> {totalCartItems}</span>
+            }
+            </Link>
         </ul>
 
         {/* Mobile Toggle Button */}

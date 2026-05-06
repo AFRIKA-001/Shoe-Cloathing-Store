@@ -10,7 +10,7 @@ import { createContext, useReducer } from "react";
 
 function cartReducer(state,action){
     if(action.type ==="ADD_ITEM"){
-        //....update the state to add meal item here
+        //....update the state to add items here
         const existingCartItemIndex = state.items.findIndex((item)=>item.id === action.item.id)
 
 const updatedItems = [...state.items];
@@ -39,7 +39,7 @@ const updatedItems = [...state.items];
 
 
     if(action.type ==="REMOVE_ITEM"){
-        //...update the state to remove meal item here
+        //...update the state to remove item here
         const existingCartItemIndex = state.items.findIndex((item)=> item.id === action.id);
         const existingCartItem= state.items[existingCartItemIndex]
         const updatedItems = [...state.items]

@@ -26,7 +26,7 @@ function New() {
     return <div className="text-red-600 flex justify-center my-60 animate-spin" ><Loader2/></div>
   }
   return (
-    <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4">
+    <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
       {data.map(product => <li key={product.id}>
         <CustomProductHook product={product} tableName="newarrivals_table" />
       </li> )}

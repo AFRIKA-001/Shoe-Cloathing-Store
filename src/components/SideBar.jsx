@@ -1,6 +1,6 @@
 
 import { Home,  LogOut } from "lucide-react"; 
-import { FaMale,FaFemale,FaChild} from "react-icons/fa"
+import { FaMale,FaFemale,FaChild,FaShoppingCart} from "react-icons/fa"
 import { HiSparkles } from "react-icons/hi"
 import { Link } from "react-router-dom";
 
@@ -38,6 +38,10 @@ function SideBar({ isOpen, setIsOpen }) {
 
           <li onClick={() => setIsOpen(false)}> 
          <Link to='/newarrivals' className="flex items-center gap-3"><HiSparkles></HiSparkles>New Arrivals</Link>
+          </li>
+
+          <li>
+            <Link to='/cart' className="flex items-center gap-3"><FaShoppingCart></FaShoppingCart> Cart</Link>
           </li>
 
 

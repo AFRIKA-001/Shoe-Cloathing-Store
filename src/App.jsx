@@ -51,7 +51,7 @@ if(isLoading){
       </button>
     </motion.div>
 
-    <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 justify-items-center ">
+    <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 justify-items-center   ">
       {shoes.map(product => <li key={product.id}>
         <CustomProductHook  product={product} tableName="homepage_shoes" />
       </li>)}
