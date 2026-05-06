@@ -9,7 +9,7 @@ const UserAuthContext = createContext({
 })
 
 
- export const UserAuthContextProvider =  ({children}) => {
+export const UserAuthContextProvider =  ({children}) => {
 
     const [session,setSession] = useState(null);
     const [isLoading,setIsLoading] = useState(true);
@@ -83,7 +83,7 @@ const userAuthContext = {
     return(
     <>
      <UserAuthContext.Provider value={userAuthContext}> 
-        {isLoading ? {children} : <Loader2 className="flex justify-center text-red-600 my-60"/>}
+        {isLoading ? children : <Loader2 className="flex  mx-auto animate-spin text-red-600 my-60"/>}
          </UserAuthContext.Provider>
 
     </>
