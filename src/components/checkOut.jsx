@@ -99,7 +99,7 @@ const formRef = useRef();
               </div>
 
               <button className="w-full py-5 bg-black text-white rounded-full font-bold uppercase tracking-[0.2em] hover:bg-gray-800 transition-all shadow-xl active:scale-95">
-              {!totalItems > 0 ? "Your cart is empty" : "Place Order"}
+               {totalItems > 0 ? <span>Place Order</span> : <span><Link to="/">Continue Shopping</Link></span>}
                    
               </button>
               {submitOrder && alert("Order submitted successfully! Thank you for shopping with JAHA. Your order is being processed.")}
