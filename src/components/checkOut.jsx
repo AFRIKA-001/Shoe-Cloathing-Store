@@ -1,13 +1,13 @@
- import { useContext,useRef} from "react";
+ import { useContext,useRef,useState} from "react";
 import Input from "./Logins/CustomInput";
-// import { motion } from "framer-motion";
 import CartContext from "../../store/cartContext";
 import Footer from "./footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 const CheckOut = () => {
-//   const [paymentMethod, setPaymentMethod] = useState("mpesa");
+
+  const [submitOrder, setSubmitorder] = useState(false);
  const cartCtxt = useContext(CartContext);
 
   const totalPrice = cartCtxt.items.reduce((total,item)=> {
@@ -21,6 +21,7 @@ const CheckOut = () => {
 const formRef = useRef();
   function handleSubmit(e){
     e.preventDefault();
+    setSubmitorder(true);
     const fd = new FormData(e.target);
     const data = Object.fromEntries(fd.entries());
     console.log(data)
@@ -96,6 +97,7 @@ const formRef = useRef();
               <button className="w-full py-5 bg-black text-white rounded-full font-bold uppercase tracking-[0.2em] hover:bg-gray-800 transition-all shadow-xl active:scale-95">
                 Submit Order
               </button>
+              {submitOrder && alert("Order submitted successfully! Thank you for shopping with JAHA. Your order is being processed.")}
 
               <p className="text-[10px] text-gray-400 text-center mt-6 uppercase tracking-widest">
                 Secure SSL Encrypted Checkout
