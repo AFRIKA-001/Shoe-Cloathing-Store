@@ -80,7 +80,7 @@ if(!product){
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2">
               {product.name}
             </h1>
-            <p className="text-lg font-mono  pt-4 font-light"> size {product.size}</p>
+            <p className="text-lg font-mono text-gray-400  pt-4 font-light"> size {product.size}</p>
           </div>
 
           <div className="flex items-center space-x-4">
