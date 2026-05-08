@@ -13,7 +13,7 @@ function DetailsPage() {
   const {AddItems} = useContext(CartContext)
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: "kes",
+    currency: "ksh",
 })
 
 
