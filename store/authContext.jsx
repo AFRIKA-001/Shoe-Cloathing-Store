@@ -44,7 +44,7 @@ export const UserAuthContextProvider = ({ children }) => {
             }
             return { success: true, data };
         } catch (error) {
-            console.log("There was an error caught during signing in", error);
+            console.error("There was an error caught during signing in", error);
             return { success: false, error };
         }
     };

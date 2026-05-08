@@ -25,7 +25,7 @@ function SignIn() {
         navigate('/');
       } else {
         // Safe access to error message from Supabase return
-        setError(result.error?.message || "Invalid email or password");
+        setError(result.error?.message || "Invalid email or password. Please try again.");
       }
     } catch (err) {
       setError("An unexpected error occurred. Please try again.");
