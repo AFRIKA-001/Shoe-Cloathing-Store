@@ -11,12 +11,14 @@ import SignIn from "./src/components/Logins/SignIn.jsx";
 import SignUp from "./src/components/Logins/SignUp.jsx";
 import ProtectedRoute from "./src/components/Protected/ProtectedRoute.jsx";
 import CheckOut from "./src/components/checkOut.jsx";
+import ErrorPage from "./src/components/ErrorPage.jsx";
 
 
 const router = createBrowserRouter([
     {
         path:'/',
         element:<RootLayout />,
+        errorElement:<ErrorPage/>,
         children:[
         {index:true,element:<App/>},
         {path:'/cart', element:<ProtectedRoute><Cart/></ProtectedRoute>},

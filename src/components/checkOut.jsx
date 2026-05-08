@@ -5,6 +5,7 @@ import Footer from "./footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
+
 const CheckOut = () => {
 
   const [submitOrder, setSubmitorder] = useState(false);
@@ -96,8 +97,10 @@ const formRef = useRef();
 
               <button className="w-full py-5 bg-black text-white rounded-full font-bold uppercase tracking-[0.2em] hover:bg-gray-800 transition-all shadow-xl active:scale-95">
                 Submit Order
+                   
               </button>
               {submitOrder && alert("Order submitted successfully! Thank you for shopping with JAHA. Your order is being processed.")}
+          
 
               <p className="text-[10px] text-gray-400 text-center mt-6 uppercase tracking-widest">
                 Secure SSL Encrypted Checkout

@@ -6,6 +6,7 @@ import JahaIntegratedShield from "../../public/jahaIcon.jsx";
 import { motion } from "framer-motion";
 import CartContext from "../../store/cartContext.jsx";
 import UserAuthContext from "../../store/authContext.jsx";
+import { SearchContext } from "../../store/SearchContext.jsx";
 
 function NavBar() { 
   const [isOpen , setIsOpen] = useState(false);
@@ -14,6 +15,7 @@ function NavBar() {
 
   const cartContext = useContext(CartContext)
   const userAuthctx = useContext(UserAuthContext)
+  const {setSearchTerm} = useContext(SearchContext)
 
  const totalCartItems = cartContext.items.reduce((totalNumberOfItems,item)=>{
   return totalNumberOfItems + item.quantity ;
@@ -30,13 +32,22 @@ function NavBar() {
           <Link to='/' className="flex items-center"><JahaIntegratedShield/></Link>
         </h1>
 
-        {/* Desktop Search */}
-        <div className="hidden lg:flex items-center">
-          <input type="text" placeholder="search Products..." className=" border border-white rounded-l-xl outline-0 text-white pl-2 h-8" />
-          <button className="bg-white text-black border border-white rounded-r-xl h-8 px-2">
-            <Search size={20} />
-          </button>
-        </div>
+      
+<div className="hidden lg:flex items-center group">
+  <div className="relative flex items-center">
+    <input 
+      type="text" 
+      placeholder="Search Products..." 
+      onChange={(e) => setSearchTerm(e.target.value)} 
+      className="bg-transparent border border-white/40 rounded-full py-1.5 pl-4 pr-10 outline-none focus:border-white  transition-all w-full text-sm font-light " 
+    />
+    <Search 
+      size={18} 
+      className="absolute right-4 text-white/60 group-focus-within:text-white transition-colors" 
+    />
+  </div>
+</div>
+
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex gap-6 items-center">
@@ -67,7 +78,7 @@ function NavBar() {
         </button>
       </motion.nav>
 
-      {/* Sidebar Overlay/Component */}
+      
       <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   )
@@ -108,57 +119,3 @@ export default NavBar;
 
 
 
-
-// function NavBar() { 
-// const [isOpen , setIsOpen] = useState(false);
-
-// const handleToggle = () => {setIsOpen(!isOpen)}
-
-//     const listStyles='hover:underline active:scale-105'
-//   return (
-//     <>
-//     <nav className="bg-black sticky  z-50 top-0 border-b border-b-white/40 flex items-center  p-2 lg:p-8 text-white w-full">
-//         <h1 className="text-white">
-//             <Link to='/'>JAHA</Link>
-//             </h1>
-//         <button className="flex mx-auto"><input type="text" className="border hidden  lg:flex  border-white rounded-l-xl outline-0 pl-1 border-r-0" />
-//         <Search className="hidden lg:flex text-white border h-8 rounded-r-xl" />
-//         </button>
-//         <ul className="hidden lg:flex gap-4 items-center">
-//             <li className={listStyles}>
-//                <Link to='/men'>Men</Link> 
-//             </li>
-//             <li className={listStyles}>
-//                <Link to='/women'>Women</Link> 
-//             </li>
-//             <li className={listStyles}>
-//                <Link to='/kids'>Kids</Link> 
-//             </li>
-//             <li className={listStyles}>
-//                <Link to='/newarrivals'>New</Link> 
-//             </li>
-//             <Link to='/cart'><ShoppingBag/></Link>
-//         </ul>
-//         {/* //mobile icons appear here */}
-
-//         <button 
-//         onClick={handleToggle}
-//         className="lg:hidden p-2 text-white"
-//         aria-label="Toggle Menu"
-//         >
-//       {isOpen? <X className="text-red-600"/>:<Menu/>}
-//         </button>
-       
-//        {isOpen && <SideBar/>}
-
-
-//     </nav>
-    
-    
-//     </>
-    
-//   )
-// }
-
-// export default NavBar
-// ... keep your imports ...

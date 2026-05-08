@@ -1,15 +1,17 @@
 
 import CustomProductHook from "../customProductHook"
-import { useState,useEffect } from "react"
+import { useState,useEffect ,useContext} from "react"
 import { supabase } from "../store/supabaseClient";
 import { Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { SearchContext } from "../store/SearchContext";
 
 function App() {
   
   const [shoes,setShoes] = useState([]);
   const [isLoading,setIsLoading] = useState(false);
+  const { searchTerms } = useContext(SearchContext)
 
   useEffect(()=>{
     const dataFetching = async ()=>{
@@ -18,12 +20,18 @@ function App() {
       if(error){
         console.error("an error occurred during fetching")
       }else{
-        setShoes(data);
+        setShoes(data || []);
       }
       setIsLoading(false)
     } 
     dataFetching();
   },[])
+
+  const filteredItems = shoes.filter((shoe)=>{
+    const name = shoe.name ? shoe.name.toLowerCase() : "";
+    const term = searchTerms ? searchTerms.toLowerCase() : "";
+    return name.includes(term);
+})
 
 
 if(isLoading){
@@ -53,9 +61,15 @@ if(isLoading){
     </motion.div>
 
     <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 justify-items-center   ">
-      {shoes.map(product => <li key={product.id}>
-        <CustomProductHook  product={product} tableName="homepage_shoes" />
-      </li>)}
+      {filteredItems.length > 0 ? (
+        filteredItems.map(product => (
+          <li key={product.id}>
+            <CustomProductHook product={product} tableName="homepage_shoes" />
+          </li>
+        ))
+      ) : (
+        <p className="text-white">No products found.</p>
+      )}
     </ul>
     
     </>
