@@ -23,14 +23,11 @@ const router = createBrowserRouter([
         {path:'/women',element:<ProtectedRoute><Women/></ProtectedRoute>},
         {path:'/kids',element:<ProtectedRoute><Kids/></ProtectedRoute>},
         {path:'/newarrivals',element:<ProtectedRoute><New/></ProtectedRoute>},
-        {path:'/signin',element:<SignIn/>},
-        {path:'/signup',element:<SignUp/>},
-    
         {path:'/products/:category/:productid',element:<DetailsPage/>}
 
         ]
-
     },
-   
+    {path:'/signin',element:<SignIn/>},
+        {path:'/signup',element:<SignUp/>}
 ]);
 export default router;
