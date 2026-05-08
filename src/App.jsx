@@ -1,17 +1,17 @@
 
 import CustomProductHook from "../customProductHook"
-import { useState,useEffect ,useContext} from "react"
+import { useState,useEffect } from "react"
 import { supabase } from "../store/supabaseClient";
 import { Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { SearchContext } from "../store/SearchContext";
+// import { SearchContext } from "../store/SearchContext";
 
 function App() {
   
   const [shoes,setShoes] = useState([]);
   const [isLoading,setIsLoading] = useState(false);
-  const { searchTerms } = useContext(SearchContext)
+  // const { searchTerms } = useContext(SearchContext)
 
   useEffect(()=>{
     const dataFetching = async ()=>{
@@ -27,11 +27,11 @@ function App() {
     dataFetching();
   },[])
 
-  const filteredItems = shoes.filter((shoe)=>{
-    const name = shoe.name ? shoe.name.toLowerCase() : "";
-    const term = searchTerms ? searchTerms.toLowerCase() : "";
-    return name.includes(term);
-})
+//   const filteredItems = shoes.filter((shoe)=>{
+//     const name = shoe.name ? shoe.name.toLowerCase() : "";
+//     // const term = searchTerms ? searchTerms.toLowerCase() : "";
+//     return name.includes(term);
+// })
 
 
 if(isLoading){
@@ -61,8 +61,8 @@ if(isLoading){
     </motion.div>
 
     <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 justify-items-center   ">
-      {filteredItems.length > 0 ? (
-        filteredItems.map(product => (
+      {shoes.length > 0 ? (
+        shoes.map(product => (
           <li key={product.id}>
             <CustomProductHook product={product} tableName="homepage_shoes" />
           </li>

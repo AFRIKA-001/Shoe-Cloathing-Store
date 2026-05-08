@@ -6,7 +6,7 @@ import JahaIntegratedShield from "../../public/jahaIcon.jsx";
 import { motion } from "framer-motion";
 import CartContext from "../../store/cartContext.jsx";
 import UserAuthContext from "../../store/authContext.jsx";
-import { SearchContext } from "../../store/SearchContext.jsx";
+// import { SearchContext } from "../../store/SearchContext.jsx";
 
 function NavBar() { 
   const [isOpen , setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ function NavBar() {
 
   const cartContext = useContext(CartContext)
   const userAuthctx = useContext(UserAuthContext)
-  const {setSearchTerm} = useContext(SearchContext)
+  // const {setSearchTerm} = useContext(SearchContext)
 
  const totalCartItems = cartContext.items.reduce((totalNumberOfItems,item)=>{
   return totalNumberOfItems + item.quantity ;
@@ -38,7 +38,7 @@ function NavBar() {
     <input 
       type="text" 
       placeholder="Search Products..." 
-      onChange={(e) => setSearchTerm(e.target.value)} 
+      // onChange={(e) => setSearchTerm(e.target.value)} 
       className="bg-transparent border border-white/40 rounded-full py-1.5 pl-4 pr-10 outline-none focus:border-white  transition-all w-full text-sm font-light " 
     />
     <Search 
