@@ -58,7 +58,7 @@ function SignUp() {
                             id='username' 
                             type="text" 
                             name="username" 
-                            placeholder="JohnDoe"
+                            placeholder="Gabriel ..."
                         />
                        </div>
 
