@@ -20,13 +20,13 @@ const router = createBrowserRouter([
         element:<RootLayout />,
         errorElement:<ErrorPage/>,
         children:[
-        {index:true,element:<App/>},
+        {index:true,element:<ProtectedRoute><App/></ProtectedRoute>},
         {path:'/cart', element:<ProtectedRoute><Cart/></ProtectedRoute>},
         {path:'/men',element:<ProtectedRoute><Mens/></ProtectedRoute>},
         {path:'/women',element:<ProtectedRoute><Women/></ProtectedRoute>},
         {path:'/kids',element:<ProtectedRoute><Kids/></ProtectedRoute>},
         {path:'/newarrivals',element:<ProtectedRoute><New/></ProtectedRoute>},
-        {path:'/products/:category/:productid',element:<DetailsPage/>}
+        {path:'/products/:category/:productid',element:<ProtectedRoute><DetailsPage/></ProtectedRoute>}
 
         ]
     },
