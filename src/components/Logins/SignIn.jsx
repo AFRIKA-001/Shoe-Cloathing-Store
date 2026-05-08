@@ -36,8 +36,8 @@ function SignIn() {
   }
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-4">
-      <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+    <div className="min-h-[100vh] flex items-center justify-center px-4 bg-black/10">
+      <div className="w-full max-w-md bg-white/80 p-8 rounded-2xl shadow-xl border border-gray-100">
         
         {/* Heading Section */}
         <div className="text-center mb-8">
