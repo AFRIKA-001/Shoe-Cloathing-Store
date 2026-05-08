@@ -10,6 +10,7 @@ import Cart from "./src/components/Cart.jsx";
 import SignIn from "./src/components/Logins/SignIn.jsx";
 import SignUp from "./src/components/Logins/SignUp.jsx";
 import ProtectedRoute from "./src/components/Protected/ProtectedRoute.jsx";
+import CheckOut from "./src/components/checkOut.jsx";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
 
         ]
     },
+    {path:'/checkout',element:<ProtectedRoute><CheckOut /></ProtectedRoute>},
     {path:'/signin',element:<SignIn/>},
         {path:'/signup',element:<SignUp/>}
 ]);
