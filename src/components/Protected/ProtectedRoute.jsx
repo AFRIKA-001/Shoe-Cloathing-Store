@@ -9,7 +9,7 @@ if(!userAuthCtxt.session){
 }
 
 
-  return children
+  return children;
     
 }
 

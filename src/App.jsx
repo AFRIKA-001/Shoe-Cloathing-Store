@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 function App() {
+  
   const [shoes,setShoes] = useState([]);
   const [isLoading,setIsLoading] = useState(false);
 
@@ -36,6 +37,7 @@ if(isLoading){
     animate={{y:[0,-15,0]}}
     transition={{duration:4,repeat:Infinity,ease:"circleIn"}}
     className=" flex flex-col bg-[url(https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=60&w=900)] bg-cover bg-center bg-no-repeat h-screen  w-full">
+      
     <motion.h1
      initial={{opacity:0,y:30}}
      animate={{opacity:1,y:0}}

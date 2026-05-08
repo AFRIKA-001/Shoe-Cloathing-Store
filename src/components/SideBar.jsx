@@ -6,13 +6,18 @@ import { HiSparkles } from "react-icons/hi"
 import { Link } from "react-router-dom";
 import {  motion } from "framer-motion";
 import CartContext from "../../store/cartContext";
+import UserAuthContext from "../../store/authContext";
 
 function SideBar({ isOpen, setIsOpen }) {
   const cartContext = useContext(CartContext)
+  const userAuthctx = useContext(UserAuthContext)
   const totalCartItems = cartContext.items.reduce((totalItems,items)=>{
     return totalItems + items.quantity;
   },0)
  
+  const handleLogOut = () => {
+    userAuthctx.SignOut()
+  }
 
   return (
     <>
@@ -75,7 +80,7 @@ function SideBar({ isOpen, setIsOpen }) {
         <div className="absolute bottom-10">
           <button  onClick={() => setIsOpen(false)}>
             <Link to='/signin' className="flex items-center gap-3 text-red-400">
-              <LogOut size={20}/> LogOut
+              <LogOut size={20} onClick={handleLogOut}/> LogOut
             </Link>
           
             </button>

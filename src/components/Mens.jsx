@@ -18,6 +18,7 @@ const Mens = ()=> {
       console.error("there was an error during fetching")
     }else{
       setShoes(data)
+      // console.log(data)
     } 
     setIsLoading(false)
     }
