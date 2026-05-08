@@ -7,7 +7,7 @@ const ErrorPage = () => {
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 overflow-hidden relative">
       
       {/* Background Decorative Element */}
-      <div className="absolute opacity-10 select-none pointer-events-none">
+      <div className="absolute opacity-10  ">
         <h1 className="text-[20rem] font-black tracking-tighter">404</h1>
       </div>
 

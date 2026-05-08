@@ -35,9 +35,9 @@ const formRef = useRef();
   }
   return (
     <>
-    <form ref={formRef} onSubmit={handleSubmit}>
+    <form ref={formRef} onSubmit={handleSubmit} >
     
-    <div className="min-h-screen bg-white pt-20 pb-2 px-4">
+    <div className="min-h-screen bg-white pt-20 pb-2 px-4 ">
       <div className="max-w-6xl mx-auto">
         <header className="mb-12 text-center">
           <h1 className="text-4xl font-extrabold tracking-tighter uppercase text-black">
