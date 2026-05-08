@@ -1,6 +1,6 @@
 import { Loader2 } from "lucide-react"
 import { useContext, useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams ,Link} from "react-router-dom"
 import { supabase } from "../../store/supabaseClient"
 import CartContext from "../../store/cartContext"
 
@@ -97,7 +97,7 @@ if(!product){
               Add to Cart
             </button>
             <button className="w-full border cursor-pointer border-gray-300 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-gray-100 active:scale-95 transition-all">
-              Proceed to Checkout
+              <Link to="/checkout">Proceed to Checkout</Link>
             </button>
           </div>
 
