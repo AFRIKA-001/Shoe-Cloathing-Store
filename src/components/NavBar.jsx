@@ -1,10 +1,11 @@
-import { Search,ShoppingBag ,X ,Menu} from "lucide-react"
+import { Search,ShoppingBag ,X ,Menu, LogOutIcon} from "lucide-react"
 import { useContext, useState } from "react"
 import  { Link }  from "react-router-dom"
 import SideBar from "./SideBar";
 import JahaIntegratedShield from "../../public/jahaIcon.jsx";
 import { motion } from "framer-motion";
 import CartContext from "../../store/cartContext.jsx";
+import UserAuthContext from "../../store/authContext.jsx";
 
 function NavBar() { 
   const [isOpen , setIsOpen] = useState(false);
@@ -12,10 +13,15 @@ function NavBar() {
   const listStyles = 'hover:underline active:scale-105'
 
   const cartContext = useContext(CartContext)
+  const userAuthctx = useContext(UserAuthContext)
 
  const totalCartItems = cartContext.items.reduce((totalNumberOfItems,item)=>{
   return totalNumberOfItems + item.quantity ;
  },0)
+
+ const handleLogout = async () => {
+  userAuthctx.signOut();
+ }
 
   return (
     <>
@@ -41,9 +47,14 @@ function NavBar() {
             <Link to='/cart' >
             <ShoppingBag className="text" />
             { totalCartItems > 0 &&
-            <span className="top-7 right-5 h-4 w-4 bg-red-600 flex items-center justify-center rounded-full text-xs absolute animate-bounce"> {totalCartItems}</span>
+            <span className="top-7 right-16 h-4 w-4 bg-red-600 flex items-center justify-center rounded-full text-xs absolute animate-bounce"> {totalCartItems}</span>
             }
             </Link>
+
+           <button type="button" onClick={handleLogout}>
+            <Link to='/signin'><LogOutIcon /></Link>
+            </button>
+            
         </ul>
 
         {/* Mobile Toggle Button */}
