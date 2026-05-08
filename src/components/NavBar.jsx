@@ -1,4 +1,4 @@
-import { Search,ShoppingBag ,X ,Menu, LogOutIcon} from "lucide-react"
+import { Search,ShoppingBag ,X ,Menu, LogOutIcon } from "lucide-react"
 import { useContext, useState } from "react"
 import  { Link }  from "react-router-dom"
 import SideBar from "./SideBar";
@@ -69,6 +69,7 @@ function NavBar() {
         </ul>
 
         {/* Mobile Toggle Button */}
+        <div className="flex items-center lg:hidden">
         <button 
           onClick={handleToggle}
           className="lg:hidden z-60 p-2 text-white" // High z-index to stay above sidebar
@@ -76,6 +77,15 @@ function NavBar() {
         >
           {isOpen ? <X className="text-red-600"/> : <Menu/>}
         </button>
+        <button>
+          <Link to='/cart' className="lg:hidden flex items-center relative right-[-10px]">
+          {totalCartItems > 0 &&
+              <span className="  relative top-[-10px] right-[-30px]  h-4 w-4 rounded-full bg-red-600 flex items-center justify-center animate-bounce">{totalCartItems}</span>}
+        <ShoppingBag size={25}/>
+        
+        </Link>
+        </button>
+           </div>
       </motion.nav>
 
       
