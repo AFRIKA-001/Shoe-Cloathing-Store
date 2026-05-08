@@ -75,7 +75,7 @@ function Cart() {
             <Trash2/>clear cart
           </button>
           <button className="flex-2 bg-black text-white py-3 rounded-full font-bold hover:bg-gray-800 transition-transform active:scale-95">
-            Checkout
+            <Link to="/checkout">Checkout</Link>
           </button>
         </div>
       </div>
