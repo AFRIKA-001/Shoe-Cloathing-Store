@@ -56,7 +56,7 @@ function NavBar() {
             <li className={listStyles}><Link to='/kids'>Kids</Link></li>
             <li className={listStyles}><Link to='/newarrivals'>New</Link></li>
             <Link to='/cart' >
-            <ShoppingBag className="text" />
+            <ShoppingBag  />
             { totalCartItems > 0 &&
             <span className="top-7 right-16 h-4 w-4 bg-red-600 flex items-center justify-center rounded-full text-xs absolute animate-bounce"> {totalCartItems}</span>
             }
