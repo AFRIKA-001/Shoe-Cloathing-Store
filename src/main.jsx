@@ -14,11 +14,13 @@ createRoot(document.getElementById('root')).render(
         <Toaster position="top-left" reverseOrder={false} toastOptions={{
     duration: 1000,
     style: {
-      background: "#111827",
-      color: "#fff",
+      background: "#fff",
+      color: "#000",
       borderRadius: "14px",
       padding: "14px 18px",
       fontWeight: "600",
+      fontFamily:"monospace",
+      fontSize:"12px"
     },
   }}/>
         <RouterProvider router={router}></RouterProvider>
