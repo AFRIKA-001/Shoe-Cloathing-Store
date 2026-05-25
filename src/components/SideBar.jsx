@@ -70,7 +70,7 @@ function SideBar({ isOpen, setIsOpen }) {
           <li>
             <Link to='/cart' className="flex items-center gap-3"><FaShoppingCart></FaShoppingCart>
              {totalCartItems > 0 &&
-              <span className="absolute top-80 right-50 h-5 w-5 rounded-full bg-red-600 flex items-center justify-center animate-bounce">{totalCartItems}</span>}
+              <span className="absolute top-80 right-50 h-5 w-5 rounded-full bg-red-600 flex items-center justify-center">{totalCartItems}</span>}
               </Link>
           </li>
 
