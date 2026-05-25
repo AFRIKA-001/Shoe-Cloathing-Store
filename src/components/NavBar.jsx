@@ -10,7 +10,7 @@ import UserAuthContext from "../../store/authContext.jsx";
 
 function NavBar() { 
   const [isOpen , setIsOpen] = useState(false);
-  const handleToggle = () => {setIsOpen(!isOpen)}
+  const handleToggle = () => {setIsOpen((prev) => !prev)}
   const listStyles = 'hover:underline active:scale-105'
 
   const cartContext = useContext(CartContext)
@@ -78,12 +78,12 @@ function NavBar() {
           {isOpen ? <X className="text-red-600"/> : <Menu/>}
         </button>
         <button>
-          <Link to='/cart' className="lg:hidden flex items-center relative right-[-10px]">
+          {/* <Link to='/cart' className="lg:hidden flex items-center relative right-[-10px]">
           {totalCartItems > 0 &&
               <span className="  relative top-[-10px] right-[-30px]  h-4 w-4 rounded-full bg-red-600 flex items-center justify-center animate-bounce">{totalCartItems}</span>}
         <ShoppingBag size={25}/>
         
-        </Link>
+        </Link> */}
         </button>
            </div>
       </motion.nav>
