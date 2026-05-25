@@ -48,6 +48,7 @@ function CustomProductHook({ product, tableName }) {
           <img
             src={product.image}
             alt={product.name}
+            loading='lazy'
             className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 lg:h-72"
           />
         </div>
