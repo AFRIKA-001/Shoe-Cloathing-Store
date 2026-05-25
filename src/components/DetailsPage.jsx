@@ -1,12 +1,14 @@
-import { Loader2 } from "lucide-react"
+import { Loader2,ShieldCheckIcon} from "lucide-react"
 import { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams ,Link} from "react-router-dom"
 import { supabase } from "../../store/supabaseClient"
 import CartContext from "../../store/cartContext"
+import toast from "react-hot-toast"
 
 
 function DetailsPage() {
   const {category,productid}=useParams()
+
   const navigate = useNavigate()
   const[product,setProduct] = useState()
   const[isLoading,setIsLoading]=useState(false)
@@ -41,6 +43,7 @@ const dataFetching = async () => {
   }
 }
 if(category && productid) dataFetching();
+
   },[productid,category])
 
  if(isLoading){
@@ -97,9 +100,30 @@ if(!product){
           </p>
 
           <div className="pt-4 space-y-4">
-            <button onClick={()=>AddItems(product)} className="w-full bg-black cursor-pointer text-white py-4 rounded-full font-bold uppercase tracking-wider hover:bg-gray-800 transition-all active:scale-95 shadow-lg">
+
+          <button
+  onClick={() => {
+    AddItems(product);
+
+    toast.success(`${product.name} added to cart ✓`, {
+      duration: 2000,
+      style: {
+        borderRadius: '14px',
+        background: '#111827',
+        color: '#fff',
+        padding: '14px 18px',
+        fontWeight: '600',
+      },
+    });
+  }}
+  className="w-full cursor-pointer rounded-2xl bg-black py-4 font-bold uppercase tracking-wider text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gray-800 hover:shadow-2xl active:scale-95"
+>
+  Add to Cart
+</button>
+            {/* <button onClick={()=>AddItems(product) } className="w-full bg-black cursor-pointer text-white py-4 rounded-full font-bold uppercase tracking-wider hover:bg-gray-800 transition-all active:scale-95 shadow-lg">
               Add to Cart
             </button>
+            { totalItems =>1  && toast.success("added to cart")} */}
 
             {product && <button className="w-full border cursor-pointer border-gray-300 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-gray-100 active:scale-95 transition-all">
               <Link to="/cart">View Cart</Link>
@@ -120,7 +144,7 @@ if(!product){
               <span>🔄 30-Day Returns</span>
             </div>
             <div className="flex flex-col items-center">
-              <span>🛡️ Secure Payment</span>
+              <span><ShieldCheckIcon size={24}/> Secure Payment</span>
             </div>
           </div>
         </div>
