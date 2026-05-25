@@ -143,8 +143,8 @@ if(!product){
             <div className="flex flex-col items-center">
               <span>🔄 30-Day Returns</span>
             </div>
-            <div className="flex flex-col items-center">
-              <span><ShieldCheckIcon size={24}/> Secure Payment</span>
+            <div >
+              <span className="flex items-center"><ShieldCheckIcon size={24}/> Secure Payment</span>
             </div>
           </div>
         </div>
