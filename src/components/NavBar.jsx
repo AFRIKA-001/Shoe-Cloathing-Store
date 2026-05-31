@@ -71,7 +71,7 @@ function NavBar() {
 
           {/* Mobile Menu Trigger */}
           <button onClick={handleToggle} className="lg:hidden text-gray-900">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} /> : <Menu size={24} className="text-gray-200"/>}
           </button>
         </div>
       </motion.nav>

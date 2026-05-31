@@ -79,7 +79,7 @@ function App() {
             <span className="text-sm text-gray-400 uppercase tracking-widest">({shoes.length} Items)</span>
           </div>
 
-          <ul className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {shoes.length > 0 ? (
               shoes.map((product) => (
                 <motion.li 

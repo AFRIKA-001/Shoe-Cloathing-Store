@@ -2,7 +2,7 @@ import { useContext, useRef, useState } from "react";
 import Input from "./Logins/CustomInput";
 import CartContext from "../../store/cartContext";
 import Footer from "./footer";
-import { Link, useNavigate } from "react-router-dom"; // Added useNavigate
+import { Link } from "react-router-dom"; // Added useNavigate
 import { ArrowLeft, Loader2 } from "lucide-react"; // Added Loader icon
 import { supabase } from "../../store/supabaseClient"; // Ensure this import exists
 import toast from "react-hot-toast";
@@ -11,7 +11,7 @@ const CheckOut = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const cartCtxt = useContext(CartContext);
   const formRef = useRef();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const totalPrice = cartCtxt.items.reduce((total, item) => total + item.price * item.quantity, 0);
   const totalItems = cartCtxt.items.reduce((total, item) => total + item.quantity, 0);
@@ -30,7 +30,7 @@ const CheckOut = () => {
       body: { 
         amount: Math.floor(amount), 
         phone: cleanPhone, 
-        orderId: `JAHA${Math.floor(Math.random() * 1000)}` // Temporary Order ID logic
+        // orderId: `JAHA${Math.floor(Math.random() * 1000)}` // Temporary Order ID logic
       }
     });
 
