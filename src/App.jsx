@@ -32,6 +32,7 @@ function App() {
   return (
     <div className="bg-white min-h-screen">
       <Suspense fallback={<div className="h-screen w-full" />}>
+    
         
         {/* Hero Section - Refined for "Luxury Editorial" feel */}
         <header className="relative h-[85vh] w-full overflow-hidden">
