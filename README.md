@@ -3,7 +3,7 @@ A modern full-stack e-commerce platform built with React, Tailwind CSS, and Supa
 
 ## 📸 Preview
 
-![Application Screenshot](/home/afrika/Shoe-Cloathing-Store/public/preview.png)
+![Application Screenshot](preview.png)
 
 ## 🚀 Live Demo
 
