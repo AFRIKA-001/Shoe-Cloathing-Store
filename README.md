@@ -1,18 +1,95 @@
-# React + Vite
+# 🛍️ JAHA Fashion E-Commerce Platform
+A modern full-stack e-commerce platform built with React, Tailwind CSS, and Supabase.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📸 Preview
 
-Currently, two official plugins are available:
+![Application Screenshot](/home/afrika/Shoe-Cloathing-Store/public/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+https://shoe-cloathing-store.vercel.app/
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 📖 Overview
 
-Note: This will impact Vite dev & build performances.
+JAHA is an online shopping platform that allows customers to browse products, add items to cart, manage wishlists, and complete purchases through an intuitive and responsive user interface.
 
-## Expanding the ESLint configuration
+The project was developed to strengthen skills in:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React Architecture
+* State Management
+* Authentication
+* Database Design
+* Responsive UI Development
+
+## ✨ Features
+
+* User Authentication
+* Product Catalog
+* Product Search
+* Shopping Cart
+* Responsive Design
+* Protected Routes
+* Real-Time Database Integration
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React
+* React Router
+* Tailwind CSS
+* Lucide React
+* Framer Motion
+
+### Backend
+
+* Supabase(BaaS)
+
+### Deployment
+
+* Vercel
+
+## 📂 Project Structure
+
+src/
+├── components/
+      |___logins
+      |___protected
+├── hooks/
+├── store/
+├── assets/
+└── App.jsx
+
+## ⚙️ Installation
+
+git clone <https://github.com/AFRIKA-001/Shoe-Cloathing-Store.git>
+
+cd Shoe-Cloathing-Store.git
+
+npm install
+
+npm run dev
+
+## 🔐 Environment Variables
+
+VITE_SUPABASE_URL=your_url
+
+VITE_SUPABASE_ANON_KEY=your_key
+
+## 🧠 Challenges Faced
+
+One of the main challenges was synchronizing cart data across multiple pages while maintaining performance. This was solved using React Context API and optimized component rendering.
+
+## 🚧 Future Improvements
+
+* Stripe/Mpesa Integration
+* Admin Analytics Dashboard
+* Product Reviews
+* Email Notifications
+* Order Tracking
+
+## 👨‍💻 Author
+
+Gabriel Wafula Shikuku
+
+Built with passion for modern web development.
