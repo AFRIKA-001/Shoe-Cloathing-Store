@@ -3,7 +3,7 @@ A modern full-stack e-commerce platform built with React, Tailwind CSS, and Supa
 
 ## 📸 Preview
 
-![Application Screenshot](preview.png)
+<img src="./public/preview.png" width="800" />
 
 ## 🚀 Live Demo
 
