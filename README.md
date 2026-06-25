@@ -7,7 +7,7 @@ A modern full-stack e-commerce platform built with React, Tailwind CSS, and Supa
 
 ## 🚀 Live Demo
 
-https://shoe-cloathing-store.vercel.app/
+[live demo](https://shoe-cloathing-store.vercel.app/)
 
 ## 📖 Overview
 
