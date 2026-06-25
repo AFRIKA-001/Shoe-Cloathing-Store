@@ -61,7 +61,7 @@ src/
 └── App.jsx
 
 ## ⚙️ Installation
-
+```
 git clone <https://github.com/AFRIKA-001/Shoe-Cloathing-Store.git>
 
 cd Shoe-Cloathing-Store.git
@@ -69,7 +69,7 @@ cd Shoe-Cloathing-Store.git
 npm install
 
 npm run dev
-
+```
 ## 🔐 Environment Variables
 
 VITE_SUPABASE_URL=your_url
