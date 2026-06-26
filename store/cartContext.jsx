@@ -60,7 +60,13 @@ const updatedItems = [...state.items];
 }
 
 export function CartContextProvider({children}) {
-   const[cartState,dispatchCartItemsAction]= useReducer(cartReducer,{items:[]})
+   const[cartState,dispatchCartItemsAction]= useReducer(cartReducer,{items:[]},(initialState)=>{
+const savedCart=localStorage.getItems('myCartItems',JSON.parse(savedCart)
+})
+
+useEffect(()={
+localStorage.setItems('myCartItems',JSON.stringify(cartState))
+},[cartState])
 
   
    function AddItems (item){
