@@ -5,7 +5,9 @@ import { createContext, useReducer, useEffect } from "react";
   const CartContext = createContext({
     items: [],
     AddItem:()=>{},
-    RemoveItem:()=>{}
+    RemoveItem:()=>{},
+    ClearCart:()={}
+
 });
 
 function cartReducer(state,action){
@@ -61,11 +63,15 @@ const updatedItems = [...state.items];
 
 export function CartContextProvider({children}) {
    const[cartState,dispatchCartItemsAction]= useReducer(cartReducer,{items:[]},(initialState)=>{
-const savedCart=localStorage.getItems('myCartItems',JSON.parse(savedCart)
+const savedCart=localStorage.getItem('myCartItems')
+if(!savedCart){
+return initialState 
+}
+return JSON.parse(savedCart)
 })
 
 useEffect(()={
-localStorage.setItems('myCartItems',JSON.stringify(cartState))
+localStorage.setItem('myCartItems',JSON.stringify(cartState))
 },[cartState])
 
   
